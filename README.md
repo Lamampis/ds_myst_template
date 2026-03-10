@@ -14,6 +14,7 @@ Features:
 - Version control with git
 
 IMAGE
+![](images/showcase.jpg)
 
 ## Prerequisites
 - Python 3.8+
@@ -26,14 +27,16 @@ IMAGE
 
 Open a terminal window and run the following commands:
 
+`
 git clone https://github.com/Lamampis/ds_uth_thesis.git
 cd ds_uth_thesis
 myst init
+`
 
 You can edit the options inside myst.yml to configure the project to your liking. Once you are ready, 
 you can create the document by running:
 
-myst build --pdf
+`myst build --pdf`
 
 The standard output file will be named thesis.pdf and placed in the project's root directory.
 
