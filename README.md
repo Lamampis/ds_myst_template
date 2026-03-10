@@ -48,7 +48,7 @@ You can recomplile after any change by running `myst build --pdf`.
 - All markdown files must be specified in the `toc` section of myst.yml in order.
 - Editing the ds_uth_thesis template folder is not recommended nor needed. Only edit if you know what you are doing!
 - You must have a valid LaTeX installation to compile the document.
-- The _build folder is created temporarily for each build and can be deleted.
+- The _build folder is created temporarily for each build and can be deleted afterwards.
 - Greek Characters are not yet supported.
 
 ## Contributing
