@@ -1,0 +1,279 @@
+\documentclass[a4paper,11pt,oneside]{article}
+\usepackage[top=2.7cm, bottom=3.5cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{labelfont=bf, textfont=it, labelsep=period, justification=centering}
+\usepackage{chngcntr}
+% Link figure and table numbering to the section
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+
+\usepackage[numbers,sort&compress]{natbib}
+\bibliographystyle{ieeetr}
+\usepackage{xcolor}
+\usepackage{changepage}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{polyglossia}
+\usepackage{titlesec}
+\usepackage{fontspec}
+
+% Make list items more compact
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+[- IMPORTS -]
+
+\hypersetup{
+  colorlinks,
+  linkcolor={black},
+  citecolor={black},
+  urlcolor={black}
+}
+
+\setmainfont{Times New Roman}
+\setmainlanguage{english}
+\setotherlanguage{greek}
+\newfontfamily\greekfont{Times New Roman}
+\setstretch{1.5}
+\pagenumbering{arabic}
+
+% --- HEADER SIZES ---
+% #
+\titleformat{\section}
+{\normalfont\fontsize{20pt}{24pt}\bfseries}{\thesection}{1em}{}
+
+% ##
+\titleformat{\subsection}
+{\normalfont\fontsize{16pt}{20pt}\bfseries}{\thesubsection}{1em}{}
+
+% ###
+\titleformat{\subsubsection}
+{\normalfont\fontsize{12pt}{16pt}\bfseries}{\thesubsubsection}{1em}{}
+
+% Page number bottom-right
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% Style quotes
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\definecolor{quoteshade}{rgb}{0.95, 0.95, 1}
+\renewenvironment{quote}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{darkblue}\vrule width 2pt}%
+    {\color{quoteshade}\vrule width 4pt}%
+    \colorbox{quoteshade}%
+  }%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}%
+  \noindent\hspace{-8pt}
+  \begin{adjustwidth}{0pt}{0pt}
+  \vspace{2pt}\vspace{2pt}
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\begin{document}
+\sloppy
+
+
+% FIRST PAGE (Title page)
+\clearpage
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+
+\includegraphics[height = 0.18\textheight]{../../../ds_uth_thesis/images/uth.png}\\[2cm]
+
+% University
+{\fontsize{24pt}{28pt}\selectfont \textbf{[- doc.options.university -]}}\\[0.8cm]
+
+% School
+{\fontsize{16pt}{18pt}\selectfont [- doc.options.school -]}\\[0.6cm]
+
+% Department
+{\fontsize{16pt}{18pt}\selectfont [- doc.options.department -]}\\[3.0cm]
+
+% Thesis Title
+{\fontsize{26pt}{28pt}\selectfont \textbf{[- doc.options.thesis_title -]}}\\[3.5cm]
+
+% Student
+{\fontsize{18pt}{20pt}\selectfont [- doc.options.student_name -] ([- doc.options.student_id -])}\\[3.0cm]
+
+% Supervisor
+{\fontsize{14pt}{16pt}\selectfont Supervisor: [- doc.options.supervisor -]}\\[1.0cm]
+
+% City + Date
+{\fontsize{14pt}{16pt}\selectfont [- doc.options.city -], [- doc.options.thesis_date -]}\\[0.6cm]
+
+\end{center}
+\end{titlepage}
+\clearpage
+
+
+% SECOND PAGE
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{2cm} % top padding
+
+\begin{center}
+    {\fontsize{20pt}{22pt}\selectfont \bfseries Υπεύθυνη Δήλωση περί Ακαδημαϊκής Δεοντολογίας
+    και Πνευματικών Δικαιωμάτων}\\[0.4cm]
+\end{center}
+
+\vspace{1.5cm}
+
+\noindent
+{\fontsize{12pt}{14pt}\selectfont
+Με πλήρη επίγνωση των συνεπειών του νόμου περί πνευματικών δικαιωμάτων, δηλώνω ρητά ότι η παρούσα πτυχιακή εργασία, καθώς και τα ηλεκτρονικά αρχεία και πηγαίοι κώδικες που αναπτύχθηκαν ή τροποποιήθηκαν στα πλαίσια αυτής της εργασίας, αποτελεί αποκλειστικά προϊόν προσωπικής μου εργασίας, δεν προσβάλλει κάθε μορφής δικαιώματα διανοητικής ιδιοκτησίας, προσωπικότητας και προσωπικών δεδομένων τρίτων, δεν περιέχει έργα/εισφορές τρίτων για τα οποία απαιτείται άδεια των δημιουργών/δικαιούχων και δεν είναι προϊόν μερικής ή ολικής αντιγραφής, οι πηγές δε που χρησιμοποιήθηκαν περιορίζονται στις βιβλιογραφικές αναφορές και μόνον, και πληρούν τους κανόνες της επιστημονικής παράθεσης. Τα σημεία όπου έχω χρησιμοποιήσει ιδέες, κείμενο, αρχεία ή/και πηγές άλλων συγγραφέων, αναφέρονται ευδιάκριτα στο κείμενο με την κατάλληλη παραπομπή και η σχετική αναφορά περιλαμβάνεται στο τμήμα των βιβλιογραφικών αναφορών με πλήρη περιγραφή.
+}
+
+\vspace{0.8cm}
+
+\noindent
+{\fontsize{12pt}{14pt}\selectfont
+Αναλαμβάνω πλήρως, ατομικά και προσωπικά, όλες τις νομικές και διοικητικές συνέπειες που δύναται να προκύψουν στην περίπτωση κατά την οποία αποδειχθεί, διαχρονικά, ότι η εργασία αυτή ή τμήμα της δεν μου ανήκει διότι είναι προϊόν λογοκλοπής.
+}
+
+\vspace{1.8cm}
+
+\begin{flushright}
+  \begin{minipage}{6cm}
+    \centering
+    {\fontsize{14pt}{16pt}\selectfont Ο/Η Δηλών/ούσα}\\[0.5cm]
+
+    % Insert Signature Image if provided in myst.yml
+    [# if doc.options.signature_path #]
+      \includegraphics[height=1.5cm]{[- doc.options.signature_path -]}
+    [# else #]
+      \vspace{1.2cm} % Space for manual signature
+    [# endif #]
+
+    \makebox[6cm]{\hrulefill}\\
+    {\fontsize{12pt}{14pt}\selectfont [- doc.options.thesis_date -]}
+  \end{minipage}
+\end{flushright}
+
+
+\clearpage
+
+
+% THIRD PAGE
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{2cm} % top padding
+
+\begin{center}
+  {\fontsize{12pt}{14pt}\selectfont \bfseries Approved by the Examination Committee}
+\end{center}
+
+\vspace{1.5cm}
+
+% Supervisor row
+\begin{tabular}{p{5cm} p{10cm}}
+  {\fontsize{12pt}{14pt}\selectfont {Supervisor}} &
+  {\fontsize{12pt}{14pt}\selectfont \textbf{Supervisor Name}} \\
+  & {\fontsize{12pt}{14pt}\selectfont Rank / Position of Supervisor} \\
+  & {\fontsize{12pt}{14pt}\selectfont Department of Digital Systems, University of Thessaly} \\
+\end{tabular}
+
+\vspace{1.2cm}
+
+% Member 1
+\begin{tabular}{p{5cm} p{10cm}}
+  {\fontsize{12pt}{14pt}\selectfont {Member}} &
+  {\fontsize{12pt}{14pt}\selectfont \textbf{Member Name 1}} \\
+  & {\fontsize{12pt}{14pt}\selectfont Rank / Position, Department/Institution} \\
+\end{tabular}
+
+\vspace{1.2cm}
+
+% Member 2
+\begin{tabular}{p{5cm} p{10cm}}
+  {\fontsize{12pt}{14pt}\selectfont {Member}} &
+  {\fontsize{12pt}{14pt}\selectfont \textbf{Member Name 2}} \\
+  & {\fontsize{12pt}{14pt}\selectfont Rank / Position, Department/Institution} \\
+\end{tabular}
+
+\vspace{2cm} % spacing before approval date
+
+\noindent
+{\fontsize{12pt}{14pt}\selectfont Approval Date:{ [- doc.options.thesis_date -] }
+
+\clearpage
+
+% FOURTH PAGE (ABSTRACT)
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{2cm} % top padding
+\noindent{\fontsize{22pt}{24pt}\selectfont \bfseries Περίληψη}\\[0.6cm]
+
+{\fontsize{12pt}{14pt}\selectfont
+ [- doc.options.thesis_abstract -]
+}
+\vspace{0.8cm}
+
+\clearpage
+
+% FIFTH PAGE — Acknowledgements
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{2cm} % top padding
+
+\noindent {\fontsize{20pt}{22pt}\selectfont \bfseries Acknowledgements}
+
+\vspace{1.5cm}
+
+{\fontsize{12pt}{14pt}\selectfont
+It is important to recognize the help the student received during the
+preparation of this work. The support may be academic, technical,
+administrative, or personal (e.g.\ family). This section should not
+exceed half a page. You can write your acknowledgements text here in
+one or more short paragraphs. Expand or adapt this text to match the
+university’s official template or your personal gratitude.
+}
+
+\vspace{2cm} % space before signature block
+
+\begin{flushright}
+  {\fontsize{12pt}{14pt}\selectfont Ονοματεπώνυμο Φοιτητή/-ήτριας}\\[0.3cm]
+  {\fontsize{12pt}{14pt}\selectfont Ημερομηνία}
+\end{flushright}
+
+\clearpage
+
+\tableofcontents
+
+% START
+[- CONTENT -]
+
+[# if doc.bibliography #]
+\newpage
+% This ensures the TOC link points to the top of the bibliography page
+\phantomsection
+% This adds the entry "References" to your Table of Contents
+\addcontentsline{toc}{section}{References/Bibliography}
+\bibliography{[- doc.bibliography | join(", ") -]}
+[# endif #]
+
+\end{document}
+}

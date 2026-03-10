@@ -1,0 +1,74 @@
+myst: v1
+title: Plain LaTeX Book
+description: Modified theme for uth
+version: "1.0.0"
+
+authors:
+  - name: Rowan Cockett kai egw
+    website: https://row1.ca
+    affiliations:
+      - Curvenote
+      - Executable Books
+
+license: CC-BY-4.0
+thumbnail: ./thumbnail.png
+tags:
+  - book
+
+doc:
+  - id: title
+    required: true
+  - id: subtitle
+  - id: bibliography
+
+options:
+  - id: university
+    title: University
+    type: string
+  - id: school
+    title: School
+    type: string
+  - id: department
+    title: Department
+    type: string
+  - id: student_name
+    title: Student name
+    type: string
+  - id: student_id
+    title: Student ID
+    type: string
+  - id: city
+    title: City
+    type: string
+  - id: thesis_date
+    title: Thesis date
+    type: string
+  - id: supervisor
+    title: Supervisor
+    type: string
+  - id: thesis_title
+    title: Thesis Title
+    type: string
+  - id: approval_date
+    title: Approval Date
+    type: string
+  - id: thesis_abstract
+    title: Thesis Abstract
+    type: string
+files:
+  - template.tex
+
+packages:
+  - caption
+  - enumitem
+  - framed
+  - geometry
+  - graphicx
+  - hyperref
+  - natbib
+  - xcolor
+  - changepage
+  - amssymb
+  - amsmath
+  - fancyhdr
+  - polyglossia
