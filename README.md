@@ -5,7 +5,7 @@ A simple to use MyST template made for writing scientific papers tailored for UT
 
 This project aims to replace the existing Microsoft Word template, allowing students to use MyST's and LaTeX's powerful tooling to easily create quality, lightweight documents.
 
-Features:
+### Features:
 - MyST directives for equations, citations, figures, cross-references
 - Automated references/bibliography with bibtex
 - Output to multiple formats: PDF/HTML/DOCX
@@ -13,10 +13,11 @@ Features:
 - Digital Signature Support
 - Version control with git
 
-IMAGE
+### Showcase:
+
 ![](images/showcase.jpg)
 
-## Prerequisites
+## Prerequisites:
 - Python 3.8+
 - Git
 - MyST LINK
@@ -27,11 +28,12 @@ IMAGE
 
 Open a terminal window and run the following commands:
 
-`
+```
 git clone https://github.com/Lamampis/ds_uth_thesis.git
 cd ds_uth_thesis
 myst init
-`
+```
+
 
 You can edit the options inside myst.yml to configure the project to your liking. Once you are ready, 
 you can create the document by running:
