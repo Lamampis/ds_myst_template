@@ -1,8 +1,8 @@
-# Chapter 3: Some other features
+# Chapter 3: Cool features and examples
 
 Here are some features that I can use for this in the future.
 
-## 1. Lists λιστες λεξουλες ενα 2 τρια
+## 1. Lists
 
 Here is an example of as list made in markdown
 
