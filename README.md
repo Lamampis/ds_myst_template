@@ -24,7 +24,7 @@ This project aims to replace the existing Microsoft Word template, allowing stud
 - LaTeX utilities (latexmk, xelatex, texlive-core, texlive-latexextra)
 - A code editor is optional but recommended.
 
-Specialized instructions for Windows, [Linux](linux_install.md), Mac
+Specialized instructions for Windows, [Linux](instructions/linux_install.md), Mac
 
 
 ## Quickstart
