@@ -24,14 +24,16 @@ This project aims to replace the existing Microsoft Word template, allowing stud
 - LaTeX utilities (latexmk, xelatex, texlive-core, texlive-latexextra)
 - A code editor is optional but recommended.
 
+Specialized instructions for Windows, [Linux](linux_install.md), Mac
+
+
 ## Quickstart
 
 Open a terminal window and run the following commands:
 
 ```
-git clone https://github.com/Lamampis/ds_uth_thesis.git
+git clone https://github.com/Lamampis/ds_myst_template.git
 cd ds_uth_thesis
-myst init
 ```
 
 
@@ -39,6 +41,7 @@ You can edit the options inside myst.yml to configure the project to your liking
 you can create the document by running:
 
 `myst build --pdf`
+(Say yes if you are prompted to install NodeJS)
 
 **You are good to go!** The created file is called thesis.pdf by default. You can start editing files in the /content folder and add your own images in the /images folder.
 You can recomplile after any change by running `myst build --pdf`.
