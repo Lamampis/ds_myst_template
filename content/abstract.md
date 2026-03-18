@@ -1,11 +1,5 @@
-(abstract-content)=
-This is a long, complex abstract with $\text{math}$ and citations.
-Η πτυχιακή εργασία αρχικά παρουσιάζει την γλώσσα σήμανσης Markdown και
-το οικοσύστημα των εργαλείων της. Στην συνέχεια εστιάζει στην διάλεκτο
-Markdown MyST και τις δυνατότητες της, η οποία είναι κατάλληλη για
-επιστημονικά και τεχνικά έγγραφα όπως πτυχιακές εργασίες. Στο πλαίσιο
-της εργασίας θα δημιουργηθεί ένα πρότυπο MyST για Πτυχιακές Εργασίες
-στο Τμήμα Ψηφιακών Συστημάτων, αντίστοιχο με το παρόν πρότυπο
-Microsoft Word. Παράλληλα θα αναλυθεί η διαδικασία δημιουργίας
-προτύπων με τα εργαλεία του MyST και θα παρουσιαστούν τα πλεονεκτήματα
-χρήσης του Markdown.
+Chapter 1: Introduction to MyST
+Chapter 2: Technology Behind MyST
+Chapyer 3: Comparison with Microsoft Word
+Chapter 4: Tutorial/Setup
+Chapter 5: Creation of template

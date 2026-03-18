@@ -38,8 +38,8 @@ project:
   ### Add segment files in order, each file is treated as a new chapter
   toc:
     - file: content/abstract.md
-    - file: content/01-article.md
-    - file: content/02-article.md
-    - file: content/03-article.md
-    - file: content/04-article.md
-    - file: content/05-article.md
+    - file: content/01-introduction.md
+    - file: content/02-behind_myst.md
+    - file: content/03-comparison.md
+    - file: content/04-setup.md
+    - file: content/05-examples.md

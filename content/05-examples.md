@@ -1,4 +1,4 @@
-# Chapter 3: Cool features and examples
+# Features and Examples
 
 Here are some features that I can use for this in the future.
 
@@ -12,7 +12,7 @@ Here is an example of as list made in markdown
 1.  This is a numbered list.
 2.  The numbering automatically adjusts.
 
-## This is a horizontial line
+### Horizontial Line
 ---
 
 ## 2. Tables
@@ -28,7 +28,7 @@ Tables are created using standard Markdown pipe syntax (`|`).
 ### Equations
 
 You can include inline math like $E=mc^2$ or display block equations with numbering.
-{{ uni }}
+
 ### Admonitions (Call-Out Boxes)
 
 :::{note} Important Note
