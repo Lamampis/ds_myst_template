@@ -73,8 +73,8 @@ style: |
   ```
 * **2. Λήψη του Template**:
   ```bash
-  git clone <repository-url>
-  cd thesis-template
+  git clone https://github.com/Lamampis/ds_myst_template.git
+  cd ds_myst_template
   ```
 
 ---
