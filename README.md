@@ -1,4 +1,4 @@
-# DS MyST Markdown Thesis Template
+# MyST Markdown DS Thesis Template
 
 ## Overview
 A simple to use [MyST](https://mystmd.org/) template made for writing scientific papers tailored for UTH's Digital Systems students.
