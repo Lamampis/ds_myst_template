@@ -14,7 +14,7 @@ This project aims to replace the existing Microsoft Word template, allowing stud
 
 ### Showcase:
 
-![](images/showcase.png)
+![](/content/images/showcase.png)
 
 ## Prerequisites:
 - Python 3.8+
