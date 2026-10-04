@@ -1,63 +1,197 @@
-# Tutorial / Setup
+# Environment Setup
 
-To get started with this MyST template, you need to ensure you have the following installed on your computer.
+The tools required to use this template are not preinstalled on most operating systems. This chapter explains how to install the necessary software and prepare your computer for writing and compiling documents with MyST Markdown.
 
-## Prerequisites:
-- Python 3.8+
-- Git
-- [MyST](https://mystmd.org/guide/installing) 
-- LaTeX utilities (latexmk, xelatex, texlive-core, texlive-latexextra)
-- A code editor is optional but recommended.
+After completing these steps, you should have MyST, Git, LaTeX, and a suitable code editor installed and ready to use.
+
+## Prerequisites
+
+The following software is required:
+
+* **Python 3.8+**
+* **Git**
+* **MyST Markdown**
+* **LaTeX**, including `xelatex` and `latexmk`
+* A code editor, such as [Visual Studio Code](https://code.visualstudio.com/) or [Zed](https://zed.dev/)
+
+For detailed MyST installation instructions, see the [official MyST documentation](https://mystmd.org/guide/installing).
+
+## Windows
+
+On Windows, the recommended way to install MyST is through **npm**.
+
+### Install Node.js
+
+Download and install the current LTS version of [Node.js](https://nodejs.org/).
+
+After installation, open PowerShell or Command Prompt and verify that Node.js and npm are available:
+
+```powershell
+node --version
+npm --version
+```
+
+### Install MyST
+
+Install MyST globally using npm:
+
+```powershell
+npm install -g mystmd
+```
+
+Verify the installation:
+
+```powershell
+myst --version
+```
+
+### Install Git
+
+If Git is not already installed, download it from [Git](https://git-scm.com/).
+
+Verify the installation with:
+
+```powershell
+git --version
+```
+
+### Install LaTeX
+
+A LaTeX distribution is required to generate the PDF. **TeX Live** or **MiKTeX** can be used on Windows.
+
+* [TeX Live](https://www.tug.org/texlive/)
+* [MiKTeX](https://miktex.org/)
+
+After installation, verify that the required commands are available:
+
+```powershell
+xelatex --version
+latexmk --version
+```
+
+If Windows cannot find these commands, restart the terminal. If the problem persists, make sure the LaTeX installation directory has been added to the system `PATH`.
 
 ## Ubuntu/Debian
 
-I recommend installing MyST through pipx:
-```
-sudo apt install pipx
-pipx ensurepath
-# Restart your terminal after this
-pipx install mystmd
+On Ubuntu or Debian, install Python and pip if they are not already available:
+
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
 ```
 
-Install LaTeX utilities:
+Install MyST with:
+
+```bash
+pip install mystmd
 ```
+
+Verify the installation:
+
+```bash
+myst --version
+```
+
+### Install LaTeX
+
+For a complete LaTeX installation:
+
+```bash
 sudo apt install texlive-full
 ```
 
-Or if you need are short on storage space:
-```
-sudo apt install texlive-latex-extra texlive-fonts-recommended, latexmk, texlive-core, texlive-xetex texlive-plain-generic
+This requires considerable disk space. A smaller installation can be used if necessary:
+
+```bash
+sudo apt install \
+  texlive-xetex \
+  texlive-latex-extra \
+  texlive-fonts-recommended \
+  texlive-plain-generic \
+  latexmk
 ```
 
-Install Fonts:
+Verify the installation:
+
+```bash
+xelatex --version
+latexmk --version
 ```
+
+### Install Required Fonts
+
+If required by the template, install the additional fonts with:
+
+```bash
 sudo apt install ttf-mscorefonts-installer
+sudo apt install fonts-crosextra-carlito
 ```
 
-## Quickstart
+## Downloading the Template
 
-Open a terminal window and run the following commands:
+Once the required software has been installed, download the DS UTH thesis template from GitHub:
 
-```
+[DS UTH Thesis Template](https://github.com/Lamampis/ds_myst_template)
+
+Using Git is recommended:
+
+```bash
 git clone https://github.com/Lamampis/ds_myst_template.git
-cd ds_uth_thesis
+cd ds_myst_template
 ```
 
-You can edit the options inside myst.yml to configure the project to your liking. Once you are ready, 
-you can create the document by running:
+You can also download the repository as a ZIP file directly from GitHub and extract it manually.
 
-`myst build --pdf`
-(Say yes if you are prompted to install NodeJS)
+## Configuring the Template
 
-**You are good to go!** The created file is called thesis.pdf by default. You can start editing files in the /content folder and add your own images in the /images folder.
-You can recomplile after any change by running `myst build --pdf`.
+Open the downloaded project in your preferred code editor.
 
-## Important Information:
-:::{note} Tips:
-- Bibliography/References is handled by references.bib inside the /content folder by default.
-- All markdown files must be specified in the `toc` section of myst.yml in order.
-- Editing the ds_uth_thesis template folder is not recommended nor needed. Only edit if you know what you are doing!
-- You must have a valid LaTeX installation to compile the document.
-- The _build folder is created temporarily for each build and can be deleted afterwards.
-- Greek Characters are not yet supported.
-:::
+The main configuration file is:
+
+```text
+myst.yml
+```
+
+Edit the appropriate options to configure the project, for example:
+
+```yaml
+options:
+  thesis_title: MyST Markdown Thesis
+  university: University of Thessaly
+  school: School of Technology
+```
+
+The Markdown files that make up the document are stored in the `content/` directory.
+
+## Building the PDF
+
+Make sure that your terminal is located in the project root, where `myst.yml` is located.
+
+Build the PDF using:
+
+```bash
+myst build --pdf
+```
+
+The first build may take some time because MyST may need to download additional resources.
+
+After making changes to the Markdown files, run the same command again to regenerate the PDF.
+
+You can also preview the document in a browser during development with:
+
+```bash
+myst start
+```
+
+## Important Information
+
+:::{note} Important Information
+
+* MyST requires **Node.js** for its CLI.
+* A valid **LaTeX installation** is required to generate the PDF.
+* All Markdown files should be specified in the `toc` section of `myst.yml` in the desired order.
+* Bibliographic references are managed through `references.bib` according to the template configuration.
+* The `myst.yml` file contains the main project configuration and should be edited when changing the thesis metadata or structure.
+* The `_build` directory is generated automatically and normally does not need to be edited.
+* The template's internal files should not be modified unless you know what they are used for.
+* Greek characters require appropriate font support in the LaTeX configuration.

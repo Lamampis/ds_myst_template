@@ -1,19 +1,20 @@
-myst: v1
+jtex: v1
 title: DS_UTH_Thesis
 description: Template for UTH students
 version: "1.0.0"
 
 authors:
-  - name: Rowan Cockett kai egw
-    website: https://row1.ca
+  - name: Charalampos Anastasiou
     affiliations:
-      - Curvenote
-      - Executable Books
+      - DS UTH
 
 license: CC-BY-4.0
 thumbnail: ./thumbnail.png
 tags:
   - book
+
+style:
+  bibliography: natbib
 
 doc:
   - id: title
@@ -31,6 +32,9 @@ options:
   - id: department
     title: Department
     type: string
+  - id: thesis_title
+    title: Thesis Title
+    type: string
   - id: student_name
     title: Student name
     type: string
@@ -43,18 +47,37 @@ options:
   - id: thesis_date
     title: Thesis date
     type: string
-  - id: supervisor
-    title: Supervisor
-    type: string
-  - id: thesis_title
-    title: Thesis Title
-    type: string
   - id: approval_date
     title: Approval Date
+    type: string
+  - id: signature_path
+    title: Signature Image Path
     type: string
   - id: thesis_abstract
     title: Thesis Abstract
     type: string
+  - id: supervisor_name
+    title: Supervisor Name
+    type: string
+  - id: supervisor_rank
+    title: Supervisor Rank
+    type: string
+  - id: supervisor_dept
+    title: Supervisor Department
+    type: string
+  - id: member1_name
+    title: Committee Member 1 Name
+    type: string
+  - id: member1_title
+    title: Committee Member 1 Title
+    type: string
+  - id: member2_name
+    title: Committee Member 2 Name
+    type: string
+  - id: member2_title
+    title: Committee Member 2 Title
+    type: string
+
 files:
   - template.tex
 

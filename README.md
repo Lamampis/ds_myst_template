@@ -11,11 +11,10 @@ This project aims to replace the existing Microsoft Word template, allowing stud
 - Output to multiple formats: PDF/HTML/DOCX
 - Single file configuration
 - Digital Signature Support
-- Version control with git
 
 ### Showcase:
 
-![](images/showcase.jpg)
+![](images/showcase.png)
 
 ## Prerequisites:
 - Python 3.8+

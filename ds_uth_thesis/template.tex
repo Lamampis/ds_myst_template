@@ -1,17 +1,10 @@
 \documentclass[a4paper,11pt,oneside]{article}
+
 \usepackage[top=2.7cm, bottom=3.5cm, left=3cm, right=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage{caption}
-\captionsetup{labelfont=bf, textfont=it, labelsep=period, justification=centering}
 \usepackage{chngcntr}
-% Link figure and table numbering to the section
-\counterwithin{figure}{section}
-\counterwithin{table}{section}
-\renewcommand{\thefigure}{\thesection-\arabic{figure}}
-\renewcommand{\thetable}{\thesection-\arabic{table}}
-
 \usepackage[numbers,sort&compress]{natbib}
-\bibliographystyle{ieeetr}
 \usepackage{xcolor}
 \usepackage{changepage}
 \usepackage{framed}
@@ -20,13 +13,33 @@
 \usepackage{amsmath}
 \usepackage{fancyhdr}
 \usepackage{setspace}
-\usepackage{polyglossia}
 \usepackage{titlesec}
 \usepackage{fontspec}
+\usepackage{polyglossia}
+
+\setmainlanguage{english}
+\setotherlanguage{greek}
+
+\setmainfont{Carlito}
+\newfontfamily\greekfont{Carlito}
+
+\setmonofont{DejaVu Sans Mono}[
+  Scale=0.85,
+  RawFeature={-tlig}
+]
 
 % Make list items more compact
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt}
+
+% Link figure and table numbering to the section
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+
+\captionsetup{labelfont=bf, textfont=it, labelsep=period, justification=centering}
+\bibliographystyle{ieeetr}
 
 [- IMPORTS -]
 
@@ -37,12 +50,22 @@
   urlcolor={black}
 }
 
-\setmainfont{Times New Roman}
-\setmainlanguage{english}
-\setotherlanguage{greek}
-\newfontfamily\greekfont{Times New Roman}
-\setstretch{1.6}
+\setstretch{1.4}
 \pagenumbering{arabic}
+
+% --- ADD THIS PIECE ---
+\usepackage{etoolbox}
+
+% Force single spacing inside the common code block environments
+\AtBeginEnvironment{verbatim}{\setstretch{1.0}}
+\AtBeginEnvironment{Verbatim}{\setstretch{1.0}}
+\AtBeginEnvironment{fencedcode}{\setstretch{1.0}} % MyST's native code block wrapper
+\AtBeginEnvironment{snugshade}{\setstretch{1.0}}  % Used for shaded background blocks
+
+% Properly patch the typewriter font family macro with correct syntax
+\makeatletter
+\g@addto@macro\ttfamily{\setstretch{1.0}}
+\makeatother
 
 % --- HEADER SIZES ---
 % #
@@ -89,42 +112,59 @@
 }
 
 \begin{document}
-\sloppy
 
 
 % FIRST PAGE (Title page)
 \clearpage
 \begin{titlepage}
 \thispagestyle{empty}
+
 \begin{center}
 
-\includegraphics[height = 0.18\textheight]{../../../ds_uth_thesis/images/uth.png}\\[2cm]
+\includegraphics[height=0.18\textheight]{../../../ds_uth_thesis/images/uth.png}
+
+\vfill
 
 % University
-{\fontsize{24pt}{28pt}\selectfont \textbf{[- doc.options.university -]}}\\[0.8cm]
+{\fontsize{24pt}{28pt}\selectfont \textbf{[- doc.options.university -]}}
+
+\vspace{0.8cm}
 
 % School
-{\fontsize{16pt}{18pt}\selectfont [- doc.options.school -]}\\[0.6cm]
+{\fontsize{16pt}{18pt}\selectfont [- doc.options.school -]}
+
+\vspace{0.6cm}
 
 % Department
-{\fontsize{16pt}{18pt}\selectfont [- doc.options.department -]}\\[3.0cm]
+{\fontsize{16pt}{18pt}\selectfont [- doc.options.department -]}
+
+\vfill
 
 % Thesis Title
-{\fontsize{26pt}{28pt}\selectfont \textbf{[- doc.options.thesis_title -]}}\\[3.5cm]
+{\fontsize{26pt}{28pt}\selectfont \textbf{[- doc.options.thesis_title -]}}
+
+\vfill
 
 % Student
-{\fontsize{18pt}{20pt}\selectfont [- doc.options.student_name -] ([- doc.options.student_id -])}\\[3.0cm]
+{\fontsize{18pt}{20pt}\selectfont
+[- doc.options.student_name -] ([- doc.options.student_id -])}
+
+\vspace{1cm}
 
 % Supervisor
-{\fontsize{14pt}{16pt}\selectfont Supervisor: [- doc.options.supervisor -]}\\[1.0cm]
+{\fontsize{14pt}{16pt}\selectfont
+Supervisor: [- doc.options.supervisor -]}
+
+\vspace{0.5cm}
 
 % City + Date
-{\fontsize{14pt}{16pt}\selectfont [- doc.options.city -], [- doc.options.thesis_date -]}\\[0.6cm]
+{\fontsize{14pt}{16pt}\selectfont
+[- doc.options.city -], [- doc.options.thesis_date -]}
 
 \end{center}
+
 \end{titlepage}
 \clearpage
-
 
 % SECOND PAGE
 \clearpage
@@ -189,9 +229,9 @@
 % Supervisor row
 \begin{tabular}{p{5cm} p{10cm}}
   {\fontsize{12pt}{14pt}\selectfont {Supervisor}} &
-  {\fontsize{12pt}{14pt}\selectfont \textbf{Supervisor Name}} \\
-  & {\fontsize{12pt}{14pt}\selectfont Rank / Position of Supervisor} \\
-  & {\fontsize{12pt}{14pt}\selectfont Department of Digital Systems, University of Thessaly} \\
+  {\fontsize{12pt}{14pt}\selectfont \textbf{[- doc.options.supervisor_name -]}} \\
+  & {\fontsize{12pt}{14pt}\selectfont [- doc.options.supervisor_rank -]} \\
+  & {\fontsize{12pt}{14pt}\selectfont [- doc.options.supervisor_dept -]} \\
 \end{tabular}
 
 \vspace{1.2cm}
@@ -199,8 +239,8 @@
 % Member 1
 \begin{tabular}{p{5cm} p{10cm}}
   {\fontsize{12pt}{14pt}\selectfont {Member}} &
-  {\fontsize{12pt}{14pt}\selectfont \textbf{Member Name 1}} \\
-  & {\fontsize{12pt}{14pt}\selectfont Rank / Position, Department/Institution} \\
+  {\fontsize{12pt}{14pt}\selectfont \textbf{[- doc.options.member1_name -]}} \\
+  & {\fontsize{12pt}{14pt}\selectfont [- doc.options.member1_title -]} \\
 \end{tabular}
 
 \vspace{1.2cm}
@@ -208,14 +248,14 @@
 % Member 2
 \begin{tabular}{p{5cm} p{10cm}}
   {\fontsize{12pt}{14pt}\selectfont {Member}} &
-  {\fontsize{12pt}{14pt}\selectfont \textbf{Member Name 2}} \\
-  & {\fontsize{12pt}{14pt}\selectfont Rank / Position, Department/Institution} \\
+  {\fontsize{12pt}{14pt}\selectfont \textbf{[- doc.options.member2_name -]}} \\
+  & {\fontsize{12pt}{14pt}\selectfont [- doc.options.member2_title -]} \\
 \end{tabular}
 
 \vspace{2cm} % spacing before approval date
 
 \noindent
-{\fontsize{12pt}{14pt}\selectfont Approval Date:{ [- doc.options.thesis_date -] }
+{\fontsize{12pt}{14pt}\selectfont Approval Date: [- doc.options.approval_date -]}
 
 \clearpage
 
@@ -270,10 +310,8 @@ university’s official template or your personal gratitude.
 \newpage
 % This ensures the TOC link points to the top of the bibliography page
 \phantomsection
-% This adds the entry "References" to your Table of Contents
-\addcontentsline{toc}{section}{References/Bibliography}
+\addcontentsline{toc}{section}{Bibliography}
 \bibliography{[- doc.bibliography | join(", ") -]}
 [# endif #]
 
 \end{document}
-}

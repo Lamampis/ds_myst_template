@@ -8,22 +8,35 @@ project:
     - output: thesis.pdf
       format: pdf
       template: ./ds_uth_thesis
-      build:
-        engine: xelatex
 
       ### EDIT FROM HERE ###
       options:
-        thesis_title: MyST Markdown Thesis
-        university: University of Thessaly
-        school: School of Technology
-        department: Digital Systems Department
         student_name: Charalampos Anastasiou
         student_id: "3121111"
+        thesis_title: Development of MyST Template for Graduation Thesis
+        university: University of Thessaly
+        school: School of Technology
         city: Larissa
-        signature_path: ../../../images/sign.png
+        department: Digital Systems Department
         thesis_date: 15 Dec 2025
         approval_date: 03/12/2025
-        supervisor: Onoufrios Charalampous
+
+        # Signature (optional)
+        signature_path: ../../../content/images/sign.png
+
+        # Supervisor
+        supervisor_name: Onoufrios Charalampous
+        supervisor_rank: Associate Professor
+        supervisor_dept: Department of Digital Systems, University of Thessaly
+
+        # Committee Member 1
+        member1_name: Member Name 1
+        member1_title: Rank / Position, Department/Institution
+
+        # Committee Member 2
+        member2_name: Member Name 2
+        member2_title: Rank / Position, Department/Institution
+
         thesis_abstract:
           Η πτυχιακή εργασία αρχικά παρουσιάζει την γλώσσα σήμανσης Markdown και
           το οικοσύστημα των εργαλείων της. Στην συνέχεια εστιάζει στην διάλεκτο
@@ -37,9 +50,10 @@ project:
 
   ### Add segment files in order, each file is treated as a new chapter
   toc:
-    - file: content/abstract.md
+    - file: content/index.md
     - file: content/01-introduction.md
-    - file: content/02-behind_myst.md
-    - file: content/03-comparison.md
+    - file: content/02-syntax.md
+    - file: content/03-technical.md
     - file: content/04-setup.md
-    - file: content/05-examples.md
+    - file: content/05-authoring.md
+    - file: content/06-conclusion.md
