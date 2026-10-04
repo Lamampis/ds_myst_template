@@ -27,13 +27,14 @@ Prerequisite install instructions for Windows, [Linux](instructions/linux_instal
 
 ## Quickstart
 
+![Project Structure](structure.png)
+
 Open a terminal window and run the following commands:
 
 ```
 git clone https://github.com/Lamampis/ds_myst_template.git
 cd ds_uth_thesis
 ```
-
 
 You can edit the options inside myst.yml to configure the project to your liking. Once you are ready, 
 you can create the document by running:
