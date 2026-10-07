@@ -14,30 +14,27 @@ project:
         student_name: Charalampos Anastasiou
         student_id: "3121111"
         thesis_title: Development of MyST Template for Graduation Thesis
-        university: University of Thessaly
-        school: School of Technology
         city: Larissa
-        department: Digital Systems Department
-        thesis_date: 15 Dec 2025
-        approval_date: 03/12/2025
+        thesis_date: October 2026
+        approval_date: 07/10/2026
 
         # Signature (optional)
         signature_path: ../../../content/images/sign.png
 
         # Supervisor
-        supervisor_name: Onoufrios Charalampous
+        supervisor_name: Onoufrios Haralampous
         supervisor_rank: Associate Professor
         supervisor_dept: Department of Digital Systems, University of Thessaly
 
         # Committee Member 1
-        member1_name: Member Name 1
-        member1_title: Rank / Position, Department/Institution
+        member1_name: Omiros Iatrellis
+        member1_title: Associate Professor, Department of Digital Systems, University of Thessaly
 
         # Committee Member 2
-        member2_name: Member Name 2
-        member2_title: Rank / Position, Department/Institution
+        member2_name: Maria Avramouli
+        member2_title: Laboratory Teaching Staff, Department of Digital Systems, University of Thessaly
 
-        thesis_abstract:
+        thesis_abstract_greek:
           Η πτυχιακή εργασία αρχικά παρουσιάζει την γλώσσα σήμανσης Markdown και
           το οικοσύστημα των εργαλείων της. Στην συνέχεια εστιάζει στην διάλεκτο
           Markdown MyST και τις δυνατότητες της, η οποία είναι κατάλληλη για
@@ -48,6 +45,16 @@ project:
           προτύπων με τα εργαλεία του MyST και θα παρουσιαστούν τα πλεονεκτήματα
           χρήσης του Markdown.
 
+        thesis_abstract_english:
+          The thesis initially presents the Markdown markup language and its ecosystem of tools.
+          It then focuses on the Markdown MyST dialect and its capabilities, which make it suitable
+          for scientific and technical documents such as undergraduate theses. As part of the
+          project, a MyST template for undergraduate theses in the Department of Digital Systems
+          will be developed, corresponding to the current Microsoft Word template. At the same time,
+          the process of creating templates using MyST tools will be analyzed, and the advantages
+          of using Markdown will be presented.
+
+
   ### Add segment files in order, each file is treated as a new chapter
   toc:
     - file: content/index.md
@@ -57,3 +64,4 @@ project:
     - file: content/04-setup.md
     - file: content/05-authoring.md
     - file: content/06-conclusion.md
+    - file: content/index.md

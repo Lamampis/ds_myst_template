@@ -1,7 +1,7 @@
 # Conclusions
 
 ## Summary of Outcomes
-The primary objective of this thesis was to design, implement, and deploy a standardized MyST Markdown template tailored specifically for the graduation theses of students within the Department of Digital Systems at the University of Thessaly. By integrating the intuitive, lightweight syntax of Markdown with the programmatic power and high-quality typographic precision of LaTeX, this project successfully bridges the historical gap between writer accessibility and rigorous, publication-ready document layout.
+The primary objective of this thesis was to design, implement, and deploy a standardized {index}`MyST` Markdown template tailored specifically for the graduation theses of students within the Department of Digital Systems at the University of Thessaly. By integrating the intuitive, lightweight syntax of Markdown with the programmatic power and high-quality typographic precision of {index}`LaTeX`, this project successfully bridges the historical gap between writer accessibility and rigorous, publication-ready document layout.
 
 Through the developed template architecture, students are provided with a complete, production-ready environment that serves as a modern, cross-platform alternative to traditional Microsoft Word workflows. Key features—including native LaTeX mathematical expression rendering, automatic figure and table numbering, dynamic metadata injection via `myst.yml`, and automated reference and citation management through BibTeX (`references.bib`) have been fully implemented. Furthermore, mandatory institutional elements required by the University of Thessaly, such as the title page, Declaration of Academic Integrity, Examination Committee approval page, multilingual abstract sections, and automated glossary/index pages, have been natively embedded into the template's underlying compilation process.
 
@@ -17,8 +17,8 @@ The key contributions of this work are summarized below:
 While the proposed template offers significant workflow enhancements, several challenges and limitations were identified during development and testing:
 
 * **Technical Learning Curve:** Transitioning from traditional graphical word processors to a plain-text markup paradigm requires familiarity with terminal commands, package installation, and syntax conventions.
-* **Dependency Overhead:** Compiling native PDF output requires a fully functional LaTeX distribution (e.g., TeX Live) and Node.js dependencies, which requires preliminary setup and storage capacity.
-* **Ecosystem Maturity:** As MyST Markdown is a modern and actively evolving ecosystem, occasional engine-level bugs or edge-case compilation errors may require manual troubleshooting compared to established LaTeX distribution workflows.
+* **Dependency Overhead:** Compiling native PDF output requires a fully functional {index}`LaTeX` distribution (e.g., TeX Live) and Node.js dependencies, which requires preliminary setup and storage capacity.
+* **Ecosystem Maturity:** As MyST Markdown is a modern and actively maturing ecosystem, occasional engine-level bugs or edge-case compilation errors may require manual troubleshooting compared to established LaTeX distribution workflows.
 * **Localization Constraints:** Native support for Greek text rendering and character hyphenation within certain LaTeX font engine combinations remains limited in current builds, requiring further optimization for multi-language documents.
 
 ## Future Work

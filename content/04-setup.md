@@ -2,7 +2,7 @@
 
 The tools required to use this template are not preinstalled on most operating systems. This chapter explains how to install the necessary software and prepare your computer for writing and compiling documents with MyST Markdown.
 
-After completing these steps, you should have MyST, Git, LaTeX, and a suitable code editor installed and ready to use.
+After completing these steps, you should have {index}`MyST`, Git, LaTeX, and a suitable code editor installed and ready to use.
 
 ## Prerequisites
 

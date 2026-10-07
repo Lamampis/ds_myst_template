@@ -11,11 +11,11 @@ After following these steps, you will be able to:
 
 ## Recommended Software
 
-While it is possible to use any text editor to author documents with MyST, an {abbr}`IDE (Integrated Development Environment)` is highly recommended for convenience.
+While it is possible to use any text editor to author documents with {index}`MyST`, an {abbr}`IDE (Integrated Development Environment)` is highly recommended for convenience.
 
 An IDE offers features that streamline the workflow, most notably an integrated terminal for running MyST CLI commands.
 
-Popular choices include [Visual Studio Code](https://code.visualstudio.com/) and [Zed](https://zed.dev/).
+Popular choices include Visual Studio Code[@vscode] and Zed[@zed].
 
 ```{figure} /content/images/IDE.png
 :label: fig-zed-ide

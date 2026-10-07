@@ -1,6 +1,6 @@
-# Markdown and MyST Typography
+# MyST Typography
 
-MyST is a powerful extension of Markdown designed to simplify the creation of high-quality, publishable computational documents. It builds upon the widely used CommonMark specification while incorporating elements from reStructuredText and Pandoc. This combination enables users to write documents that are both human-readable and structurally rich.
+{index}`MyST` is a powerful extension of Markdown designed to simplify the creation of high-quality, publishable computational documents. It builds upon the widely used CommonMark specification while incorporating elements from reStructuredText and Pandoc. This combination enables users to write documents that are both human-readable and structurally rich.
 
 MyST supports all standard inline Markdown formatting, allowing authors to emphasize and distinguish text effectively. In addition to extending Markdown’s syntax, MyST integrates with **unist** and **mdast**, which are standardized abstract syntax trees used within the unifiedjs ecosystem. These tools provide robust support for analyzing, transforming, and exporting content, making MyST particularly suitable for technical writing, scientific publishing, and academic workflows.
 
@@ -98,10 +98,10 @@ A horizontal rule visually separates sections of content:
 
 Images can be embedded using standard Markdown syntax:
 
-![alt text](/content/images/sunset.png "optional title")
+![alt text](/content/images/sunset.png "Sunset at the beach")
 
 ```
-![alt text](/content/images/sunset.png "optional title")
+![alt text](/content/images/sunset.png "Sunset at the beach")
 ```
 
 ## Links
@@ -167,7 +167,7 @@ Well {abbr}`MyST (Markedly Structured Text)` is cool!
 
 ## Mathematical Expressions
 
-MyST supports LaTeX-style mathematics, both inline and in block form:
+MyST supports {index}`LaTeX`-style mathematics, both inline and in block form:
 
 * Inline: $a^2 + b^2 = c^2$ (`$a^2 + b^2 = c^2$`)
 * Fraction: $\frac{x+1}{y-1}$ (`$\frac{x+1}{y-1}$`)
@@ -196,10 +196,10 @@ Tables can be written using the standard Github Flavoured Markdown syntax: https
 | baz | bim |
 ```
 
-They can also be written like this:
+We can write tables like this so we can later refer to them by their **:name:** variable.
 
-```{table} Pinakas
-:name: table:test1
+```{table} MyST Features
+:name: table:features
 | Feature       | Type        | Status    | Notes                  |
 | :------------ | :---------: | :-------: | :--------------------- |
 | Admonitions   | Directive   | Supported | Useful for call-outs   |
@@ -207,19 +207,20 @@ They can also be written like this:
 | References    | Role        | Essential | Enables cross-linking  |
 ```
 
-```
-```{table} Pinakas
-:name: table:test1
+````{code}
+```{table} MyST Features
+:name: table:features
 | Feature       | Type        | Status    | Notes                  |
-| :------------ | :---------: | :-------: | :--------------------- |
+| :------ | :-----: | :------: | :-------- |
 | Admonitions   | Directive   | Supported | Useful for call-outs   |
 | Equations     | Role        | Supported | Uses LaTeX syntax      |
 | References    | Role        | Essential | Enables cross-linking  |
 ```
-```
+````
 
-```
+````{code}
 ```{list-table} Math Constants
+:name: table:math_constants
 :header-rows: 1
 
 * - Name
@@ -232,9 +233,10 @@ They can also be written like this:
   - $ e = \lim_{n \to \infty} (1 + \frac{1}{n})^n $
   - $ 2.71828 $
 ```
-```
+````
 
 ```{list-table} Math Constants
+:name: table:math_constants
 :header-rows: 1
 
 * - Name
@@ -301,17 +303,21 @@ The Glossary is a collection of definitions for technical terms used in a docume
 
 :::{glossary}
 Markdown
-: Markdown is a lightweight markup language for creating formatted text using a plain-text editor.
+: A lightweight markup language for creating formatted text using a plain-text editor.
 :::
 
 ```
 :::{glossary}
 Markdown
-: Markdown is a lightweight markup language for creating formatted text using a plain-text editor.
+: A lightweight markup language for creating formatted text using a plain-text editor.
 :::
 ```
 
 You can use *{term}`Markdown`* to write notes.
+
+```
+You can use *{term}`Markdown`* to write notes.
+```
 
 Every term will be added automatically to the bottom of the document, in the **Glossary** section, along with the number of the page it's located at.
 
@@ -352,25 +358,19 @@ An index containing all indexed terms and phrases in alphabetical order along wi
 
 ## Cross Referencing
 
-```{figure} https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true
-:label: mountain-figure
-:align: center
-
-This mountain looks awesome
-```
+In MyST, cross-referencing allows elements such as sections, figures, tables, and equations to be referenced from other parts of a document. An element is given a unique label, and that label is then used to create a reference.
 
 ````
-```{figure} https://github.com/rowanc1/pics/blob/main/mountains.png?raw=true
-:label: mountain-figure
-:align: center
+```{figure} /content/images/latex_logo.png
+:label: latex-logo
+:width: 20%
 
-This mountain looks awesome
+LaTeX Logo
 ```
 ````
 
-We can point to it later with:
-Check out [](#mountain-figure)!!
+Check out [](#latex-logo)!!
 
 ```
-Check out [](#mountain-figure)!!
+Check out [](#latex-logo)!!
 ```

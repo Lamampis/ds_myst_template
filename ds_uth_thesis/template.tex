@@ -126,17 +126,17 @@
 \vfill
 
 % University
-{\fontsize{24pt}{28pt}\selectfont \textbf{[- doc.options.university -]}}
+{\fontsize{24pt}{28pt}\selectfont \textbf{University of Thessaly}}
 
 \vspace{0.8cm}
 
 % School
-{\fontsize{16pt}{18pt}\selectfont [- doc.options.school -]}
+{\fontsize{16pt}{18pt}\selectfont School of Technology}
 
 \vspace{0.6cm}
 
 % Department
-{\fontsize{16pt}{18pt}\selectfont [- doc.options.department -]}
+{\fontsize{16pt}{18pt}\selectfont Digital Systems Department}
 
 \vfill
 
@@ -153,7 +153,7 @@
 
 % Supervisor
 {\fontsize{14pt}{16pt}\selectfont
-Supervisor: [- doc.options.supervisor -]}
+Supervisor: [- doc.options.supervisor_name -]}
 
 \vspace{0.5cm}
 
@@ -259,7 +259,7 @@ Supervisor: [- doc.options.supervisor -]}
 
 \clearpage
 
-% FOURTH PAGE (ABSTRACT)
+% FOURTH PAGE (GREEK ABSTRACT)
 \clearpage
 \thispagestyle{empty}
 
@@ -267,36 +267,45 @@ Supervisor: [- doc.options.supervisor -]}
 \noindent{\fontsize{22pt}{24pt}\selectfont \bfseries Περίληψη}\\[0.6cm]
 
 {\fontsize{12pt}{14pt}\selectfont
- [- doc.options.thesis_abstract -]
+ [- doc.options.thesis_abstract_greek -]
 }
 \vspace{0.8cm}
 
 \clearpage
 
-% FIFTH PAGE — Acknowledgements
+% FIFTH PAGE (ENGLISH ABSTRACT)
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{2cm} % top padding
+\noindent{\fontsize{22pt}{24pt}\selectfont \bfseries Abstract}\\[0.6cm]
+
+{\fontsize{12pt}{14pt}\selectfont
+ [- doc.options.thesis_abstract_english -]
+}
+\vspace{0.8cm}
+
+\clearpage
+
+% SIXTH PAGE — Acknowledgements
 \clearpage
 \thispagestyle{empty}
 
 \vspace*{2cm} % top padding
 
-\noindent {\fontsize{20pt}{22pt}\selectfont \bfseries Acknowledgements}
+\noindent {\fontsize{20pt}{22pt}\selectfont \bfseries Ευχαριστίες}
 
 \vspace{1.5cm}
 
 {\fontsize{12pt}{14pt}\selectfont
-It is important to recognize the help the student received during the
-preparation of this work. The support may be academic, technical,
-administrative, or personal (e.g.\ family). This section should not
-exceed half a page. You can write your acknowledgements text here in
-one or more short paragraphs. Expand or adapt this text to match the
-university’s official template or your personal gratitude.
+Είναι σημαντική η αναγνώριση της βοήθειας που έλαβε ο σπουδαστής κατά την διάρκεια της προπαρασκευής της εργασίας του. Μπορεί να είναι ακαδημαϊκή, τεχνική, γραμματειακή, διοικητική και προσωπική (π.χ. οικογένεια). Η ενότητα αυτή δεν πρέπει να ξεπερνά τη μισή σελίδα.
 }
 
 \vspace{2cm} % space before signature block
 
 \begin{flushright}
-  {\fontsize{12pt}{14pt}\selectfont Ονοματεπώνυμο Φοιτητή/-ήτριας}\\[0.3cm]
-  {\fontsize{12pt}{14pt}\selectfont Ημερομηνία}
+  {\fontsize{12pt}{14pt}\selectfont [- doc.options.student_name -]}\\[0.3cm]
+  {\fontsize{12pt}{14pt}\selectfont [- doc.options.approval_date -]}
 \end{flushright}
 
 \clearpage
