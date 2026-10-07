@@ -1,8 +1,9 @@
 # Introduction
 
+# Markup Languages
 Markup languages play an important role in the creation, organization, and presentation of digital documents. Unlike plain text, they allow additional information to describe the structure, meaning, or presentation of content, enabling elements such as headings, paragraphs, tables, and references to be represented in a structured and machine-readable form. Their development has significantly influenced how digital information is authored, processed, exchanged, and published, particularly in areas such as web development, scientific publishing, and technical communication. Over time, markup languages have evolved from systems focused primarily on formatting toward approaches that emphasize structure, reusability, and the separation of content from presentation. This evolution has led to the development of systems such as LaTeX, Markdown, and its various extensions.
 
-## Thesis Goal
+# Thesis Goal
 
 The objective of this thesis is to develop a Thesis template made using {index}`MyST` Markdown tailored specifically for students of the Department of Digital Systems at the University of Thessaly (UTH)[@uthsite]. PDF is the output format that will be used. This proposed solution aims to serve as a practical and accessible alternative to the existing Microsoft Word template.
 
